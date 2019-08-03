@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  PhotosApp
 //
-//  Created by Boris Filipovic ENGL on 01/08/2019.
+//  Created by Boris Filipovic on 01/08/2019.
 //  Copyright © 2019 Boris Filipovic. All rights reserved.
 //
 
@@ -15,7 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    /// Set initial view controller.
+    let usersViewController = UsersViewController()
+    window = UIWindow(frame: UIScreen.main.bounds)
+    window?.rootViewController = usersViewController
+    window?.makeKeyAndVisible()
+    
     return true
   }
 

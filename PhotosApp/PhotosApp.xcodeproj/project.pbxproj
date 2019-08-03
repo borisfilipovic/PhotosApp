@@ -13,6 +13,30 @@
 		2050E04822F36A840024C049 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2050E04722F36A840024C049 /* Assets.xcassets */; };
 		2050E04B22F36A840024C049 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2050E04922F36A840024C049 /* LaunchScreen.storyboard */; };
 		2050E05622F36A840024C049 /* PhotosAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2050E05522F36A840024C049 /* PhotosAppTests.swift */; };
+		2091E14122F47C5A007A22DA /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E14022F47C5A007A22DA /* UsersViewController.swift */; };
+		2091E14622F47C7B007A22DA /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E14522F47C7B007A22DA /* UsersView.swift */; };
+		2091E14922F47DFB007A22DA /* UITableView+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E14822F47DFB007A22DA /* UITableView+Extra.swift */; };
+		2091E14C22F47E8E007A22DA /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E14B22F47E8E007A22DA /* UserTableViewCell.swift */; };
+		2091E14E22F480F1007A22DA /* UserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E14D22F480F1007A22DA /* UserCellView.swift */; };
+		2091E15022F48232007A22DA /* UIView+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E14F22F48232007A22DA /* UIView+Extra.swift */; };
+		2091E15322F482EF007A22DA /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E15222F482EF007A22DA /* UserItem.swift */; };
+		2091E15922F4B1CD007A22DA /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E15822F4B1CD007A22DA /* RestClient.swift */; };
+		2091E15B22F4B212007A22DA /* RestClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E15A22F4B212007A22DA /* RestClientProtocol.swift */; };
+		2091E15E22F4B295007A22DA /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E15D22F4B295007A22DA /* Result.swift */; };
+		2091E16022F4B2CC007A22DA /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E15F22F4B2CC007A22DA /* NetworkError.swift */; };
+		2091E16222F4B33C007A22DA /* EndpointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E16122F4B33C007A22DA /* EndpointProtocol.swift */; };
+		2091E16422F4B3D9007A22DA /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E16322F4B3D9007A22DA /* Host.swift */; };
+		2091E16622F4B5CB007A22DA /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E16522F4B5CB007A22DA /* Endpoint.swift */; };
+		2091E16922F5558E007A22DA /* UsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E16822F5558E007A22DA /* UsersController.swift */; };
+		2091E16B22F555B8007A22DA /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E16A22F555B8007A22DA /* UsersViewModel.swift */; };
+		2091E16F22F557A7007A22DA /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E16E22F557A7007A22DA /* UsersService.swift */; };
+		2091E17122F558F6007A22DA /* NetworkSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E17022F558F6007A22DA /* NetworkSuccess.swift */; };
+		2091E17622F55DFC007A22DA /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E17522F55DFC007A22DA /* Observable.swift */; };
+		2091E17822F5BEF1007A22DA /* CodableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E17722F5BEF1007A22DA /* CodableDelegate.swift */; };
+		2091E17A22F5CA8A007A22DA /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E17922F5CA8A007A22DA /* UserCellViewModel.swift */; };
+		2091E17C22F5CAE3007A22DA /* RowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E17B22F5CAE3007A22DA /* RowViewModel.swift */; };
+		2091E17E22F5F4BB007A22DA /* ModelItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E17D22F5F4BB007A22DA /* ModelItemProtocol.swift */; };
+		2091E18022F5F529007A22DA /* TouchSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E17F22F5F529007A22DA /* TouchSelectionDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +60,30 @@
 		2050E05122F36A840024C049 /* PhotosAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotosAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2050E05522F36A840024C049 /* PhotosAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAppTests.swift; sourceTree = "<group>"; };
 		2050E05722F36A840024C049 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2091E14022F47C5A007A22DA /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		2091E14522F47C7B007A22DA /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
+		2091E14822F47DFB007A22DA /* UITableView+Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extra.swift"; sourceTree = "<group>"; };
+		2091E14B22F47E8E007A22DA /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		2091E14D22F480F1007A22DA /* UserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellView.swift; sourceTree = "<group>"; };
+		2091E14F22F48232007A22DA /* UIView+Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extra.swift"; sourceTree = "<group>"; };
+		2091E15222F482EF007A22DA /* UserItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
+		2091E15822F4B1CD007A22DA /* RestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
+		2091E15A22F4B212007A22DA /* RestClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClientProtocol.swift; sourceTree = "<group>"; };
+		2091E15D22F4B295007A22DA /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		2091E15F22F4B2CC007A22DA /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		2091E16122F4B33C007A22DA /* EndpointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointProtocol.swift; sourceTree = "<group>"; };
+		2091E16322F4B3D9007A22DA /* Host.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Host.swift; sourceTree = "<group>"; };
+		2091E16522F4B5CB007A22DA /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		2091E16822F5558E007A22DA /* UsersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersController.swift; sourceTree = "<group>"; };
+		2091E16A22F555B8007A22DA /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		2091E16E22F557A7007A22DA /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
+		2091E17022F558F6007A22DA /* NetworkSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSuccess.swift; sourceTree = "<group>"; };
+		2091E17522F55DFC007A22DA /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		2091E17722F5BEF1007A22DA /* CodableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableDelegate.swift; sourceTree = "<group>"; };
+		2091E17922F5CA8A007A22DA /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
+		2091E17B22F5CAE3007A22DA /* RowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowViewModel.swift; sourceTree = "<group>"; };
+		2091E17D22F5F4BB007A22DA /* ModelItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelItemProtocol.swift; sourceTree = "<group>"; };
+		2091E17F22F5F529007A22DA /* TouchSelectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchSelectionDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +125,13 @@
 		2050E03F22F36A830024C049 /* PhotosApp */ = {
 			isa = PBXGroup;
 			children = (
+				2091E17422F55DD0007A22DA /* Observable */,
+				2091E15C22F4B281007A22DA /* Enum */,
+				2091E15622F4B1B6007A22DA /* Network */,
+				2091E15522F48470007A22DA /* Protocols */,
+				2091E15422F48452007A22DA /* Models */,
+				2091E14722F47DEA007A22DA /* Extensions */,
+				2091E13E22F47C40007A22DA /* Users */,
 				2050E04022F36A830024C049 /* AppDelegate.swift */,
 				2050E04222F36A830024C049 /* ViewController.swift */,
 				2050E04422F36A830024C049 /* Main.storyboard */,
@@ -94,6 +149,143 @@
 				2050E05722F36A840024C049 /* Info.plist */,
 			);
 			path = PhotosAppTests;
+			sourceTree = "<group>";
+		};
+		2091E13E22F47C40007A22DA /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				2091E16D22F55796007A22DA /* Service */,
+				2091E16C22F555C0007A22DA /* ViewModel */,
+				2091E16722F5557B007A22DA /* Data */,
+				2091E15122F482A1007A22DA /* Models */,
+				2091E14A22F47E5C007A22DA /* TableViewCells */,
+				2091E14222F47C5F007A22DA /* Views */,
+				2091E13F22F47C4E007A22DA /* ViewController */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		2091E13F22F47C4E007A22DA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2091E14022F47C5A007A22DA /* UsersViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2091E14222F47C5F007A22DA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2091E14522F47C7B007A22DA /* UsersView.swift */,
+				2091E14D22F480F1007A22DA /* UserCellView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2091E14722F47DEA007A22DA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2091E14822F47DFB007A22DA /* UITableView+Extra.swift */,
+				2091E14F22F48232007A22DA /* UIView+Extra.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2091E14A22F47E5C007A22DA /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				2091E14B22F47E8E007A22DA /* UserTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		2091E15122F482A1007A22DA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2091E15422F48452007A22DA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2091E15222F482EF007A22DA /* UserItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2091E15522F48470007A22DA /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2091E17722F5BEF1007A22DA /* CodableDelegate.swift */,
+				2091E17D22F5F4BB007A22DA /* ModelItemProtocol.swift */,
+				2091E17F22F5F529007A22DA /* TouchSelectionDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2091E15622F4B1B6007A22DA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2091E15722F4B1C2007A22DA /* Client */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2091E15722F4B1C2007A22DA /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				2091E15822F4B1CD007A22DA /* RestClient.swift */,
+				2091E15A22F4B212007A22DA /* RestClientProtocol.swift */,
+				2091E16122F4B33C007A22DA /* EndpointProtocol.swift */,
+				2091E16322F4B3D9007A22DA /* Host.swift */,
+				2091E16522F4B5CB007A22DA /* Endpoint.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		2091E15C22F4B281007A22DA /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				2091E15D22F4B295007A22DA /* Result.swift */,
+				2091E15F22F4B2CC007A22DA /* NetworkError.swift */,
+				2091E17022F558F6007A22DA /* NetworkSuccess.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		2091E16722F5557B007A22DA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2091E16822F5558E007A22DA /* UsersController.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2091E16C22F555C0007A22DA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2091E16A22F555B8007A22DA /* UsersViewModel.swift */,
+				2091E17922F5CA8A007A22DA /* UserCellViewModel.swift */,
+				2091E17B22F5CAE3007A22DA /* RowViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2091E16D22F55796007A22DA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2091E16E22F557A7007A22DA /* UsersService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		2091E17422F55DD0007A22DA /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				2091E17522F55DFC007A22DA /* Observable.swift */,
+			);
+			path = Observable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +389,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2091E17A22F5CA8A007A22DA /* UserCellViewModel.swift in Sources */,
 				2050E04322F36A830024C049 /* ViewController.swift in Sources */,
+				2091E17E22F5F4BB007A22DA /* ModelItemProtocol.swift in Sources */,
+				2091E14122F47C5A007A22DA /* UsersViewController.swift in Sources */,
+				2091E15322F482EF007A22DA /* UserItem.swift in Sources */,
+				2091E18022F5F529007A22DA /* TouchSelectionDelegate.swift in Sources */,
+				2091E14922F47DFB007A22DA /* UITableView+Extra.swift in Sources */,
+				2091E14E22F480F1007A22DA /* UserCellView.swift in Sources */,
 				2050E04122F36A830024C049 /* AppDelegate.swift in Sources */,
+				2091E17122F558F6007A22DA /* NetworkSuccess.swift in Sources */,
+				2091E17822F5BEF1007A22DA /* CodableDelegate.swift in Sources */,
+				2091E16422F4B3D9007A22DA /* Host.swift in Sources */,
+				2091E16B22F555B8007A22DA /* UsersViewModel.swift in Sources */,
+				2091E16222F4B33C007A22DA /* EndpointProtocol.swift in Sources */,
+				2091E17622F55DFC007A22DA /* Observable.swift in Sources */,
+				2091E16922F5558E007A22DA /* UsersController.swift in Sources */,
+				2091E15E22F4B295007A22DA /* Result.swift in Sources */,
+				2091E15022F48232007A22DA /* UIView+Extra.swift in Sources */,
+				2091E16F22F557A7007A22DA /* UsersService.swift in Sources */,
+				2091E17C22F5CAE3007A22DA /* RowViewModel.swift in Sources */,
+				2091E16622F4B5CB007A22DA /* Endpoint.swift in Sources */,
+				2091E15B22F4B212007A22DA /* RestClientProtocol.swift in Sources */,
+				2091E14C22F47E8E007A22DA /* UserTableViewCell.swift in Sources */,
+				2091E16022F4B2CC007A22DA /* NetworkError.swift in Sources */,
+				2091E15922F4B1CD007A22DA /* RestClient.swift in Sources */,
+				2091E14622F47C7B007A22DA /* UsersView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
