@@ -42,6 +42,7 @@ final class UsersViewController: UIViewController {
     
     private func setup() {
         userController.start()
+        navigationItem.title = Translations.usersTitle.rawValue.localizedUppercase
     }
     
     // MARK: - Binding.
