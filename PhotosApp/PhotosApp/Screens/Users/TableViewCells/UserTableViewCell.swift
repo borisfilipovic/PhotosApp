@@ -8,22 +8,15 @@
 
 import UIKit
 
-final class UserTableViewCell: UITableViewCell {
-    
+final class UserTableViewCell: UITableViewCell, CellConfigurable {
+
     // MARK: - Properties.
     
     private let userCellView: UserCellView = {
         let usersV = UserCellView()
         return usersV
     }()
-    
-    var viewModel: UserCellViewModel? {
-        didSet {
-            guard let user = viewModel?.user else {return}
-            userCellView.set(user: user)
-        }
-    }
-    
+
     // MARK: - Init.
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -56,7 +49,10 @@ final class UserTableViewCell: UITableViewCell {
     // MARK: - Prepare for reuse.
     
     private func cleanAll() {
-        viewModel = nil
         userCellView.cleanAll()
+    }
+    
+    func setup(viewModel: RowViewModel) {
+        userCellView.set(viewModel: viewModel)
     }
 }

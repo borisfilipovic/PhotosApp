@@ -1,31 +1,42 @@
 //
-//  UsersViewController.swift
+//  AlbumsViewController.swift
 //  PhotosApp
 //
-//  Created by Boris Filipovic on 02/08/2019.
+//  Created by Boris Filipovic on 04/08/2019.
 //  Copyright © 2019 Boris Filipovic. All rights reserved.
 //
 
 import UIKit
 
-final class UsersViewController: UIViewController {
+final class AlbumsViewController: UIViewController {
     
     // MARK: - Properties.
     
-    private lazy var usersView: UsersView = {
-        let usersV = UsersView()
+    private lazy var albumsView: selectionView = {
+        let usersV = selectionView()
         usersV.delegate = self
         return usersV
     }()
     
     private lazy var userController = {
-        return UsersController()
+        return AlbumsController(user: user)
     }()
+    
+    private let user: UserItem
     
     // MARK: - Lifecycle.
     
+    init(user: UserItem) {
+        self.user = user
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
-        view = usersView
+        view = albumsView
     }
     
     override func viewDidLoad() {
@@ -35,14 +46,14 @@ final class UsersViewController: UIViewController {
     }
     
     deinit {
-        print("UsersViewController deinit called.")
+        print("AlbumsViewController deinit called.")
     }
     
     // MARK: - Setup.
     
     private func setup() {
         userController.start()
-        navigationItem.title = Translations.usersTitle.rawValue.localizedUppercase
+        navigationItem.title = Translations.albumTitle.rawValue.localizedUppercase
     }
     
     // MARK: - Binding.
@@ -52,7 +63,7 @@ final class UsersViewController: UIViewController {
         userController.viewModel.isLoading.valueChanged = { [weak self] isLoading in
             guard let isLoading = isLoading else {return}
             DispatchQueue.main.async {
-                self?.usersView.data(isLoading: isLoading)
+                self?.albumsView.data(isLoading: isLoading)
             }
         }
         
@@ -60,23 +71,22 @@ final class UsersViewController: UIViewController {
         userController.viewModel.isTableViewHidden.valueChanged = { [weak self] isTableViewHidden in
             guard let isTableViewHidden = isTableViewHidden else {return}
             DispatchQueue.main.async {
-                self?.usersView.tableView(isHidden: isTableViewHidden)
+                self?.albumsView.tableView(isHidden: isTableViewHidden)
             }
         }
         
         /// Populate table view.
-        userController.viewModel.users.valueChanged = { [weak self] users in
-            guard let users: [UserItem] = users as? [UserItem] else {return}
+        userController.viewModel.albumsCellViewModels.valueChanged = { [weak self] albums in
+            guard let albums: [RowViewModel] = albums as? [RowViewModel] else {return}
             DispatchQueue.main.async {
-                self?.usersView.set(users: users)
+                self?.albumsView.set(users: albums)
             }
         }
     }
 }
 
-extension UsersViewController: TouchSelectionDelegate {
-    func userSelected(data: ViewModelItemProtocol) {
-        guard let user = data as? UserItem else {return}
-        // TODO: - Move to albums VC.
+extension AlbumsViewController: TouchSelectionDelegate {
+    func userSelected(indexPath: IndexPath) {
+        // TODO:
     }
 }

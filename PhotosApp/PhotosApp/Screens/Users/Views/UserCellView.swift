@@ -80,7 +80,11 @@ final class UserCellView: UIView {
 
 // MARK: - Public methods.
 extension UserCellView {
-    func set(user: UserItem) {
+    func set(viewModel: RowViewModel) {
+        guard let userCellViewModel = viewModel as? UserCellViewModel, let user = userCellViewModel.user else {
+            cleanAll()
+            return
+        }
         userNameLabel.text = user.name
         emailAddressLabel.text = user.email + ", " + user.phone
     }

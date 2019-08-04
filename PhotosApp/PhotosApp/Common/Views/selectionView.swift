@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class UsersView: UIView {
+final class selectionView: UIView {
     
     // MARK: - Properties.
     
@@ -24,6 +24,7 @@ final class UsersView: UIView {
     private let mainTableView: UITableView = {
         let tblView: UITableView = UITableView()
         tblView.register(cell: UserTableViewCell.self)
+        tblView.register(cell: AlbumsTableViewCell.self)
         tblView.tableFooterView = UIView()
         tblView.backgroundColor = UIColor.clear
         tblView.separatorStyle = .none
@@ -33,8 +34,8 @@ final class UsersView: UIView {
         tblView.translatesAutoresizingMaskIntoConstraints = false
         return tblView
     }()
-    
-    private var users: [UserItem] = [] {
+
+    private var users: [RowViewModel] = [] {
         didSet {
             mainTableView.reloadData()
         }
@@ -85,7 +86,7 @@ final class UsersView: UIView {
 }
 
 // MARK: - Public methods.
-extension UsersView {
+extension selectionView {
     func data(isLoading: Bool) {
         isLoading ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
     }
@@ -93,14 +94,14 @@ extension UsersView {
     func tableView(isHidden: Bool) {
         mainTableView.isHidden = isHidden
     }
-    
-    func set(users: [UserItem]) {
+
+    func set(users: [RowViewModel]) {
         self.users = users
     }
 }
 
 // MARK: - TableView.
-extension UsersView: UITableViewDataSource, UITableViewDelegate {
+extension selectionView: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -110,23 +111,35 @@ extension UsersView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.reuseCell(UserTableViewCell.self, for: indexPath) else {
+        guard let cellViewMode = getCellViewModel(forIndex: indexPath), let cell = tableView.reuseCell(cellType(for: cellViewMode), for: indexPath) else {
             return UITableViewCell()
         }
-        cell.viewModel = UserCellViewModel(user: safeGetUser(forIndexPath: indexPath))
+        if let cellConfiguration = cell as? CellConfigurable {
+            cellConfiguration.setup(viewModel: cellViewMode)
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let user = safeGetUser(forIndexPath: indexPath) else {return}
-        delegate?.userSelected(data: user)
+        delegate?.userSelected(indexPath: indexPath)
     }
 }
 
 // MARK: - Private(Helper) methods.
-private extension UsersView {
-    func safeGetUser(forIndexPath index: IndexPath) -> UserItem? {
-        guard users.count > index.row else { return nil }
-        return users[index.row]
+private extension selectionView {
+    private func cellType(for viewModel: RowViewModel) -> UITableViewCell.Type {
+        switch viewModel {
+        case is UserCellViewModel:
+            return UserTableViewCell.self
+        case is AlbumsCellViewModel:
+            return AlbumsTableViewCell.self
+        default:
+            fatalError("Unexpected view model type: \(viewModel)")
+        }
+    }
+    
+    func getCellViewModel(forIndex indexPath: IndexPath) -> RowViewModel? {
+        guard users.count > indexPath.row else { return nil }
+        return users[indexPath.row]
     }
 }

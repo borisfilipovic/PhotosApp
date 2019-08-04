@@ -1,47 +1,50 @@
 //
-//  UsersController.swift
+//  AlbumsController.swift
 //  PhotosApp
 //
-//  Created by Boris Filipovic on 03/08/2019.
+//  Created by Boris Filipovic on 04/08/2019.
 //  Copyright © 2019 Boris Filipovic. All rights reserved.
 //
 
 import Foundation
 
-final class UsersController {
+final class AlbumsController {
     
     // MARK: - Properties.
     
-    let viewModel: UsersViewModel
-    private let userService: UsersService
+    let viewModel: AlbumsViewModel
+    private let albumsService: AlbumsService
+    private let user: UserItem
     
     // MARK: - Init.
     
-    init(viewModel: UsersViewModel = UsersViewModel(), userService: UsersService = UsersService()) {
+    init(viewModel: AlbumsViewModel = AlbumsViewModel(), user: UserItem) {
         self.viewModel = viewModel
-        self.userService = userService
+        self.user = user
+        self.albumsService = AlbumsService(user: user)
     }
 }
 
 // MARK: - Public methods.
-extension UsersController {
+extension AlbumsController {
     func start() {
         /// Set initial states.
         viewModel.isLoading.value = true
         viewModel.isTableViewHidden.value = true
         
         /// Fetch data.
-        userService.fetchUsers { [weak self] result in
+        albumsService.fetchAlbums { [weak self] result in
             /// Handle states.
             self?.viewModel.isLoading.value = false
             self?.viewModel.isTableViewHidden.value = false
             
             /// Handle results.
             switch result {
-            case .success(let users):
-                self?.viewModel.users.value = users
+            case .success(let albumCellViewModel):
+                //self?.viewModel.users.value = users
+                self?.viewModel.albumsCellViewModels.value = albumCellViewModel
             case .failure(let error):
-                self?.viewModel.users.value = nil
+                self?.viewModel.albumsCellViewModels.value = nil
                 print("Data error: \(error)")
             }
         }

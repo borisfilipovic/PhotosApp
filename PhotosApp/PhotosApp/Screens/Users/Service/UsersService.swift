@@ -13,7 +13,7 @@ final class UsersService {
     
     // MARK: - Properties.
     
-    typealias FunctionResult = ((Result<[UserItem], NetworkError>) -> Void)?
+    typealias FunctionResult = ((Result<[UserCellViewModel], NetworkError>) -> Void)?
     private let client: RestClientProtocol
     
     // MARK: - Init.
@@ -36,7 +36,9 @@ extension UsersService {
                     completion?(.failure(NetworkError.jsonEncode))
                     return
                 }
-                completion?(.success(userItem))
+                let usersCellViewModels = userItem.compactMap {UserCellViewModel(user: $0)}
+                completion?(.success(usersCellViewModels))
+                //completion?(.success(userItem))
             case .failure(let err):
                 completion?(.failure(NetworkError.generic(err)))
             }

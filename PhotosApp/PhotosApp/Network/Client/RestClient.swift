@@ -16,7 +16,16 @@ extension RestClient: RestClientProtocol {
     // MARK: - Public Methods.
     
     func call(endpoint: EndpointProtocol, parameters: RestClient.Params?, result: RestClient.ResponseResult) {
-        guard let url: URL = URL(string: endpoint.url) else {
+        let urlComponents = NSURLComponents(string: endpoint.url)
+        var queryItems: [URLQueryItem] = []
+        for case let param in parameters ?? [:] {
+            let name = param.key
+            if let value = param.value as? String {
+                queryItems.append(URLQueryItem(name: name, value: value))
+            }
+        }
+        urlComponents?.queryItems = queryItems
+        guard let url = urlComponents?.url else {
             result?(.failure(NetworkError.incorrectEndpointData))
             return
         }

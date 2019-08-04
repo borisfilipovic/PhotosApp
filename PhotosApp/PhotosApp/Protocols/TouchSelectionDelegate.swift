@@ -9,5 +9,5 @@
 import Foundation
 
 protocol TouchSelectionDelegate: class {
-    func userSelected(data: ViewModelItemProtocol)
+    func userSelected(indexPath: IndexPath)
 }
