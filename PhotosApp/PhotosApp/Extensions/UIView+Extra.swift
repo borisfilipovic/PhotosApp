@@ -11,17 +11,17 @@ import UIKit
 extension UIView {
     func pin(to view: UIView) {
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        self.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         self.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        self.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        self.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         self.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
     }
     
     func pinSafe(to view: UIView) {
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        self.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         self.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        self.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        self.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         self.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
     }
     

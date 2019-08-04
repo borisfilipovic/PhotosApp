@@ -18,6 +18,9 @@
 		20476C4D22F7448100FAEBD0 /* AlbumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20476C4C22F7448100FAEBD0 /* AlbumsTableViewCell.swift */; };
 		20476C5022F744FA00FAEBD0 /* AlbumCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20476C4F22F744FA00FAEBD0 /* AlbumCellView.swift */; };
 		20476C5322F74BE600FAEBD0 /* PhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20476C5222F74BE600FAEBD0 /* PhotosViewModel.swift */; };
+		20476C5B22F7652D00FAEBD0 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20476C5A22F7652D00FAEBD0 /* PhotosViewController.swift */; };
+		20476C5D22F7653B00FAEBD0 /* PhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20476C5C22F7653B00FAEBD0 /* PhotosView.swift */; };
+		20476C5F22F765E200FAEBD0 /* PhotosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20476C5E22F765E200FAEBD0 /* PhotosController.swift */; };
 		2050E04122F36A830024C049 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2050E04022F36A830024C049 /* AppDelegate.swift */; };
 		2050E04322F36A830024C049 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2050E04222F36A830024C049 /* ViewController.swift */; };
 		2050E04622F36A830024C049 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2050E04422F36A830024C049 /* Main.storyboard */; };
@@ -25,7 +28,7 @@
 		2050E04B22F36A840024C049 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2050E04922F36A840024C049 /* LaunchScreen.storyboard */; };
 		2050E05622F36A840024C049 /* PhotosAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2050E05522F36A840024C049 /* PhotosAppTests.swift */; };
 		2091E14122F47C5A007A22DA /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E14022F47C5A007A22DA /* UsersViewController.swift */; };
-		2091E14622F47C7B007A22DA /* selectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E14522F47C7B007A22DA /* selectionView.swift */; };
+		2091E14622F47C7B007A22DA /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E14522F47C7B007A22DA /* SelectionView.swift */; };
 		2091E14922F47DFB007A22DA /* UITableView+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E14822F47DFB007A22DA /* UITableView+Extra.swift */; };
 		2091E14C22F47E8E007A22DA /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E14B22F47E8E007A22DA /* UserTableViewCell.swift */; };
 		2091E14E22F480F1007A22DA /* UserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E14D22F480F1007A22DA /* UserCellView.swift */; };
@@ -77,6 +80,9 @@
 		20476C4C22F7448100FAEBD0 /* AlbumsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewCell.swift; sourceTree = "<group>"; };
 		20476C4F22F744FA00FAEBD0 /* AlbumCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCellView.swift; sourceTree = "<group>"; };
 		20476C5222F74BE600FAEBD0 /* PhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModel.swift; sourceTree = "<group>"; };
+		20476C5A22F7652D00FAEBD0 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		20476C5C22F7653B00FAEBD0 /* PhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosView.swift; sourceTree = "<group>"; };
+		20476C5E22F765E200FAEBD0 /* PhotosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosController.swift; sourceTree = "<group>"; };
 		2050E03D22F36A830024C049 /* PhotosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2050E04022F36A830024C049 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2050E04222F36A830024C049 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,7 +94,7 @@
 		2050E05522F36A840024C049 /* PhotosAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAppTests.swift; sourceTree = "<group>"; };
 		2050E05722F36A840024C049 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2091E14022F47C5A007A22DA /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
-		2091E14522F47C7B007A22DA /* selectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectionView.swift; sourceTree = "<group>"; };
+		2091E14522F47C7B007A22DA /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
 		2091E14822F47DFB007A22DA /* UITableView+Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extra.swift"; sourceTree = "<group>"; };
 		2091E14B22F47E8E007A22DA /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		2091E14D22F480F1007A22DA /* UserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellView.swift; sourceTree = "<group>"; };
@@ -154,6 +160,7 @@
 		20476C3422F6B85D00FAEBD0 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				20476C5422F7643700FAEBD0 /* Photos */,
 				2091E13E22F47C40007A22DA /* Users */,
 				20476C3322F6B84A00FAEBD0 /* Albums */,
 			);
@@ -196,7 +203,7 @@
 		20476C4322F6DEC600FAEBD0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2091E14522F47C7B007A22DA /* selectionView.swift */,
+				2091E14522F47C7B007A22DA /* SelectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -229,6 +236,56 @@
 			isa = PBXGroup;
 			children = (
 				20476C5222F74BE600FAEBD0 /* PhotosViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		20476C5422F7643700FAEBD0 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				20476C5922F7647000FAEBD0 /* ViewModel */,
+				20476C5822F7646300FAEBD0 /* Data */,
+				20476C5722F7645900FAEBD0 /* CollectionViewCell */,
+				20476C5622F7644D00FAEBD0 /* Views */,
+				20476C5522F7644300FAEBD0 /* ViewController */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		20476C5522F7644300FAEBD0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				20476C5A22F7652D00FAEBD0 /* PhotosViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		20476C5622F7644D00FAEBD0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				20476C5C22F7653B00FAEBD0 /* PhotosView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		20476C5722F7645900FAEBD0 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		20476C5822F7646300FAEBD0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				20476C5E22F765E200FAEBD0 /* PhotosController.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		20476C5922F7647000FAEBD0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -644,9 +701,12 @@
 				20476C3C22F6BA0E00FAEBD0 /* AlbumsController.swift in Sources */,
 				2091E15022F48232007A22DA /* UIView+Extra.swift in Sources */,
 				20476C4022F6BA4600FAEBD0 /* AlbumsViewModel.swift in Sources */,
+				20476C5F22F765E200FAEBD0 /* PhotosController.swift in Sources */,
 				20476C4D22F7448100FAEBD0 /* AlbumsTableViewCell.swift in Sources */,
 				2091E16F22F557A7007A22DA /* UsersService.swift in Sources */,
 				2091E17C22F5CAE3007A22DA /* RowViewModel.swift in Sources */,
+				20476C5D22F7653B00FAEBD0 /* PhotosView.swift in Sources */,
+				20476C5B22F7652D00FAEBD0 /* PhotosViewController.swift in Sources */,
 				2091E16622F4B5CB007A22DA /* Endpoint.swift in Sources */,
 				2091E15B22F4B212007A22DA /* RestClientProtocol.swift in Sources */,
 				20476C3622F6B93200FAEBD0 /* AlbumItem.swift in Sources */,
@@ -657,7 +717,7 @@
 				2091E15922F4B1CD007A22DA /* RestClient.swift in Sources */,
 				20476C5322F74BE600FAEBD0 /* PhotosViewModel.swift in Sources */,
 				20476C3922F6B9ED00FAEBD0 /* AlbumsViewController.swift in Sources */,
-				2091E14622F47C7B007A22DA /* selectionView.swift in Sources */,
+				2091E14622F47C7B007A22DA /* SelectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

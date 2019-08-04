@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class selectionView: UIView {
+final class SelectionView: UIView {
     
     // MARK: - Properties.
     
@@ -86,7 +86,7 @@ final class selectionView: UIView {
 }
 
 // MARK: - Public methods.
-extension selectionView {
+extension SelectionView {
     func data(isLoading: Bool) {
         isLoading ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
     }
@@ -101,7 +101,7 @@ extension selectionView {
 }
 
 // MARK: - TableView.
-extension selectionView: UITableViewDataSource, UITableViewDelegate {
+extension SelectionView: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -126,7 +126,7 @@ extension selectionView: UITableViewDataSource, UITableViewDelegate {
 }
 
 // MARK: - Private(Helper) methods.
-private extension selectionView {
+private extension SelectionView {
     private func cellType(for viewModel: RowViewModel) -> UITableViewCell.Type {
         switch viewModel {
         case is UserCellViewModel:

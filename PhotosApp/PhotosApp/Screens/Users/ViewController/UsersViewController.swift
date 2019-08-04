@@ -12,8 +12,8 @@ final class UsersViewController: UIViewController {
     
     // MARK: - Properties.
     
-    private lazy var usersView: selectionView = {
-        let usersV = selectionView()
+    private lazy var usersView: SelectionView = {
+        let usersV = SelectionView()
         usersV.delegate = self
         return usersV
     }()

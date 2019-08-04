@@ -11,4 +11,5 @@ import Foundation
 enum Translations: String {
     case usersTitle = "Users"
     case albumTitle = "Album"
+    case photosTitle = "Photos"
 }

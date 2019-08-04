@@ -12,13 +12,13 @@ final class AlbumsViewController: UIViewController {
     
     // MARK: - Properties.
     
-    private lazy var albumsView: selectionView = {
-        let usersV = selectionView()
+    private lazy var albumsView: SelectionView = {
+        let usersV = SelectionView()
         usersV.delegate = self
         return usersV
     }()
     
-    private lazy var userController = {
+    private lazy var albumsController = {
         return AlbumsController(user: user)
     }()
     
@@ -52,7 +52,7 @@ final class AlbumsViewController: UIViewController {
     // MARK: - Setup.
     
     private func setup() {
-        userController.start()
+        albumsController.start()
         navigationItem.title = Translations.albumTitle.rawValue.localizedUppercase
     }
     
@@ -60,7 +60,7 @@ final class AlbumsViewController: UIViewController {
     
     private func bindData() {
         /// Data is loading state tracking.
-        userController.viewModel.isLoading.valueChanged = { [weak self] isLoading in
+        albumsController.viewModel.isLoading.valueChanged = { [weak self] isLoading in
             guard let isLoading = isLoading else {return}
             DispatchQueue.main.async {
                 self?.albumsView.data(isLoading: isLoading)
@@ -68,7 +68,7 @@ final class AlbumsViewController: UIViewController {
         }
         
         /// Hide/show table view state tracking.
-        userController.viewModel.isTableViewHidden.valueChanged = { [weak self] isTableViewHidden in
+        albumsController.viewModel.isTableViewHidden.valueChanged = { [weak self] isTableViewHidden in
             guard let isTableViewHidden = isTableViewHidden else {return}
             DispatchQueue.main.async {
                 self?.albumsView.tableView(isHidden: isTableViewHidden)
@@ -76,7 +76,7 @@ final class AlbumsViewController: UIViewController {
         }
         
         /// Populate table view.
-        userController.viewModel.albumsCellViewModels.valueChanged = { [weak self] albums in
+        albumsController.viewModel.albumsCellViewModels.valueChanged = { [weak self] albums in
             guard let albums: [RowViewModel] = albums as? [RowViewModel] else {return}
             DispatchQueue.main.async {
                 self?.albumsView.set(users: albums)
@@ -87,6 +87,8 @@ final class AlbumsViewController: UIViewController {
 
 extension AlbumsViewController: TouchSelectionDelegate {
     func userSelected(indexPath: IndexPath) {
-        // TODO:
+        guard let count = albumsController.viewModel.albumsCellViewModels.value??.count, count > indexPath.row, let photosViewModel = albumsController.viewModel.albumsCellViewModels.value??[indexPath.row].photos else { return }
+        let photosViewController = PhotosViewController(viewModel: photosViewModel)
+        navigationController?.pushViewController(photosViewController, animated: true)
     }
 }
