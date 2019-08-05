@@ -2,7 +2,7 @@
 //  PhotosViewController.swift
 //  PhotosApp
 //
-//  Created by Boris Filipovic ENGL on 04/08/2019.
+//  Created by Boris Filipovic on 04/08/2019.
 //  Copyright © 2019 Boris Filipovic. All rights reserved.
 //
 
@@ -56,11 +56,10 @@ final class PhotosViewController: UIViewController {
     
     private func bindData() {
         /// Populate photos view.
-        photosController.viewModel.valueChanged = { [weak self] albums in
-            print("Some data is present")
-            guard let albums: [RowViewModel] = albums as? [RowViewModel] else {return}
+        photosController.viewModel.valueChanged = { [weak self] photosVM in
+            guard let photosVM: RowViewModel = photosVM as? RowViewModel else {return}
             DispatchQueue.main.async {
-                //self?.albumsView.set(users: albums)
+                self?.photosView.set(photosVM: photosVM)
             }
         }
     }
@@ -69,8 +68,5 @@ final class PhotosViewController: UIViewController {
 extension PhotosViewController: TouchSelectionDelegate {
     func userSelected(indexPath: IndexPath) {
         print("User selected: \(indexPath)")
-//        guard let count = userController.viewModel.usersCellViewModels.value??.count, count > indexPath.row, let user = userController.viewModel.usersCellViewModels.value??[indexPath.row].user else { return }
-//        let albumsViewController = AlbumsViewController(user: user)
-//        navigationController?.pushViewController(albumsViewController, animated: true)
     }
 }

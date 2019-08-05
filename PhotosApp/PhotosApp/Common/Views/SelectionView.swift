@@ -35,7 +35,7 @@ final class SelectionView: UIView {
         return tblView
     }()
 
-    private var users: [RowViewModel] = [] {
+    private var items: [RowViewModel] = [] {
         didSet {
             mainTableView.reloadData()
         }
@@ -96,7 +96,7 @@ extension SelectionView {
     }
 
     func set(users: [RowViewModel]) {
-        self.users = users
+        self.items = users
     }
 }
 
@@ -107,7 +107,7 @@ extension SelectionView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -139,7 +139,7 @@ private extension SelectionView {
     }
     
     func getCellViewModel(forIndex indexPath: IndexPath) -> RowViewModel? {
-        guard users.count > indexPath.row else { return nil }
-        return users[indexPath.row]
+        guard items.count > indexPath.row else { return nil }
+        return items[indexPath.row]
     }
 }

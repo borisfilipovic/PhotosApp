@@ -52,6 +52,9 @@
 		2091E17E22F5F4BB007A22DA /* ModelItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E17D22F5F4BB007A22DA /* ModelItemProtocol.swift */; };
 		2091E18022F5F529007A22DA /* TouchSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E17F22F5F529007A22DA /* TouchSelectionDelegate.swift */; };
 		2091E18322F6B68B007A22DA /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091E18222F6B68B007A22DA /* Translations.swift */; };
+		20F24EC922F89DD0005104DB /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F24EC822F89DD0005104DB /* PhotoCollectionViewCell.swift */; };
+		20F24ECB22F89F2D005104DB /* UICollectionView+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F24ECA22F89F2D005104DB /* UICollectionView+Extra.swift */; };
+		20F24ECF22F8AB09005104DB /* PhotoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F24ECE22F8AB09005104DB /* PhotoCellView.swift */; };
 		4C7693A902A44B2B4C91B517 /* Pods_PhotosAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C96F8F946F3B4097CA537E /* Pods_PhotosAppTests.framework */; };
 		B591A5EC37B564895474D743 /* Pods_PhotosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13ED203A809A3D1D8196645D /* Pods_PhotosApp.framework */; };
 /* End PBXBuildFile section */
@@ -118,6 +121,9 @@
 		2091E17D22F5F4BB007A22DA /* ModelItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelItemProtocol.swift; sourceTree = "<group>"; };
 		2091E17F22F5F529007A22DA /* TouchSelectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchSelectionDelegate.swift; sourceTree = "<group>"; };
 		2091E18222F6B68B007A22DA /* Translations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translations.swift; sourceTree = "<group>"; };
+		20F24EC822F89DD0005104DB /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		20F24ECA22F89F2D005104DB /* UICollectionView+Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extra.swift"; sourceTree = "<group>"; };
+		20F24ECE22F8AB09005104DB /* PhotoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellView.swift; sourceTree = "<group>"; };
 		24988FFF9A61EE17DF4946C1 /* Pods-PhotosAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosAppTests.debug.xcconfig"; path = "Target Support Files/Pods-PhotosAppTests/Pods-PhotosAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3FA70BE40E52864333066B6E /* Pods-PhotosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosApp.debug.xcconfig"; path = "Target Support Files/Pods-PhotosApp/Pods-PhotosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A51EC7E8A5080ECE147F5BED /* Pods-PhotosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosApp.release.xcconfig"; path = "Target Support Files/Pods-PhotosApp/Pods-PhotosApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -264,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				20476C5C22F7653B00FAEBD0 /* PhotosView.swift */,
+				20F24ECE22F8AB09005104DB /* PhotoCellView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -271,6 +278,7 @@
 		20476C5722F7645900FAEBD0 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				20F24EC822F89DD0005104DB /* PhotoCollectionViewCell.swift */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -375,6 +383,7 @@
 			children = (
 				2091E14822F47DFB007A22DA /* UITableView+Extra.swift */,
 				2091E14F22F48232007A22DA /* UIView+Extra.swift */,
+				20F24ECA22F89F2D005104DB /* UICollectionView+Extra.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -688,6 +697,7 @@
 				2091E18022F5F529007A22DA /* TouchSelectionDelegate.swift in Sources */,
 				2091E14922F47DFB007A22DA /* UITableView+Extra.swift in Sources */,
 				2091E14E22F480F1007A22DA /* UserCellView.swift in Sources */,
+				20F24EC922F89DD0005104DB /* PhotoCollectionViewCell.swift in Sources */,
 				2050E04122F36A830024C049 /* AppDelegate.swift in Sources */,
 				2091E17122F558F6007A22DA /* NetworkSuccess.swift in Sources */,
 				20476C4822F7402A00FAEBD0 /* AlbumsCellViewModel.swift in Sources */,
@@ -695,6 +705,7 @@
 				2091E16422F4B3D9007A22DA /* Host.swift in Sources */,
 				2091E16B22F555B8007A22DA /* UsersViewModel.swift in Sources */,
 				2091E16222F4B33C007A22DA /* EndpointProtocol.swift in Sources */,
+				20F24ECB22F89F2D005104DB /* UICollectionView+Extra.swift in Sources */,
 				2091E17622F55DFC007A22DA /* Observable.swift in Sources */,
 				2091E16922F5558E007A22DA /* UsersController.swift in Sources */,
 				2091E15E22F4B295007A22DA /* Result.swift in Sources */,
@@ -706,6 +717,7 @@
 				2091E16F22F557A7007A22DA /* UsersService.swift in Sources */,
 				2091E17C22F5CAE3007A22DA /* RowViewModel.swift in Sources */,
 				20476C5D22F7653B00FAEBD0 /* PhotosView.swift in Sources */,
+				20F24ECF22F8AB09005104DB /* PhotoCellView.swift in Sources */,
 				20476C5B22F7652D00FAEBD0 /* PhotosViewController.swift in Sources */,
 				2091E16622F4B5CB007A22DA /* Endpoint.swift in Sources */,
 				2091E15B22F4B212007A22DA /* RestClientProtocol.swift in Sources */,

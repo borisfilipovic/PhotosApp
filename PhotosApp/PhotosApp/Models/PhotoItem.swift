@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PhotoItem: ViewModelItemProtocol, CodableDelegate {
+struct PhotoItem: ViewModelItemProtocol, CodableDelegate, RowViewModel {
     let albumId: Int
     let id: Int
     let title: String
