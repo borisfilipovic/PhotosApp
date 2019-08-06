@@ -13,16 +13,16 @@ final class PhotosViewController: UIViewController {
     // MARK: - Properties.
     
     private lazy var photosView: PhotosView = {
-        let usersV = PhotosView()
-        usersV.delegate = self
-        return usersV
+        let photosV = PhotosView()
+        photosV.delegate = self
+        return photosV
     }()
     
     let photosController: PhotosController
     
     // MARK: - Lifecycle.
     
-    init(viewModel: PhotosViewModel) {
+    init(viewModel: RowViewModel) {
         self.photosController = PhotosController(viewModel: viewModel)
         super.init(nibName: nil, bundle: nil)
     }
@@ -67,6 +67,9 @@ final class PhotosViewController: UIViewController {
 
 extension PhotosViewController: TouchSelectionDelegate {
     func userSelected(indexPath: IndexPath) {
-        print("User selected: \(indexPath)")
+        guard let viewModel = photosController.viewModel.value as? PhotosGalleryViewModel, (viewModel.photos?.count ?? 0) > indexPath.row, let photo = viewModel.photos?[indexPath.row], let album = viewModel.album else {return}
+        let photoViewModel = PhotoViewModel(photo: photo, album: album)
+        let photoViewController = PhotoViewController(viewModel: photoViewModel)
+        navigationController?.present(photoViewController, animated: true, completion: nil)
     }
 }

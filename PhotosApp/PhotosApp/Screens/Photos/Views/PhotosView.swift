@@ -23,7 +23,7 @@ final class PhotosView: UIView {
         return collection
     }()
     
-    private var photosViewModel: PhotosViewModel = PhotosViewModel(photos: []) {
+    private var photosViewModel: PhotosGalleryViewModel? {
         didSet {
             mainCollectionView.reloadData()
         }
@@ -79,7 +79,7 @@ final class PhotosView: UIView {
 
 extension PhotosView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photosViewModel.photos?.count ?? 0
+        return photosViewModel?.photos?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -88,6 +88,10 @@ extension PhotosView: UICollectionViewDataSource {
             cell.setup(viewModel: photo)
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.userSelected(indexPath: indexPath)
     }
 }
 
@@ -100,15 +104,15 @@ extension PhotosView: UICollectionViewDelegateFlowLayout {
 
 extension PhotosView {
     func set(photosVM: RowViewModel) {
-        guard let photosViewModel = photosVM as? PhotosViewModel else { return }
+        guard let photosViewModel = photosVM as? PhotosGalleryViewModel else { return }
         self.photosViewModel = photosViewModel
     }
 }
 
 private extension PhotosView {
     func photo(forIndexPath indexPath: IndexPath) -> RowViewModel? {
-        guard (photosViewModel.photos?.count ?? 0) > indexPath.row else { return nil }
-        return photosViewModel.photos?[indexPath.row]
+        guard (photosViewModel?.photos?.count ?? 0) > indexPath.row else { return nil }
+        return photosViewModel?.photos?[indexPath.row]
     }
     
     func calculateWidth() -> CGFloat {

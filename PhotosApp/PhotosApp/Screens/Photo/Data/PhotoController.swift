@@ -1,30 +1,30 @@
 //
-//  PhotosController.swift
+//  PhotoController.swift
 //  PhotosApp
 //
-//  Created by Boris Filipovic on 04/08/2019.
+//  Created by Boris Filipovic on 05/08/2019.
 //  Copyright © 2019 Boris Filipovic. All rights reserved.
 //
 
 import Foundation
 
-final class PhotosController {
+final class PhotoController {
     
     // MARK: - Properties.
     
     let viewModel: Observable<RowViewModel?> = Observable<RowViewModel?>(nil)
-    private let photosViewModel: RowViewModel
+    private let photoViewModel: RowViewModel
     
     // MARK: - Init.
     
     init(viewModel: RowViewModel) {
-        self.photosViewModel = viewModel
+        self.photoViewModel = viewModel
     }
 }
 
 // MARK: - Public methods.
-extension PhotosController {
+extension PhotoController {
     func start() {
-        viewModel.value = photosViewModel
+        viewModel.value = photoViewModel
     }
 }
