@@ -11,4 +11,5 @@ import Foundation
 struct PhotoViewModel: RowViewModel {
     let photo: PhotoItem
     let album: AlbumItem
+    let user: UserItem
 }

@@ -111,7 +111,7 @@ extension PhotoView {
     func set(viewModel: PhotoViewModel) {
         photoFooterView.imageTitleLabel.text = "Title: ".localizedUppercase + viewModel.photo.title.localizedLowercase
         photoFooterView.albumTitleLabel.text = "Album: ".localizedUppercase + viewModel.album.title.localizedLowercase
-        photoFooterView.authorLabel.text = "Author: ".localizedUppercase
+        photoFooterView.authorLabel.text = "Author: ".localizedUppercase + viewModel.user.name.localizedCapitalized
         photoImageView.kf.setImage(with: URL(string: viewModel.photo.url))
     }
 }

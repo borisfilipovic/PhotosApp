@@ -9,6 +9,7 @@
 import Foundation
 
 struct PhotosGalleryViewModel: RowViewModel {
-    let photos: [PhotoItem]?
-    let album: AlbumItem?
+    let photos: [PhotoItem]
+    let album: AlbumItem
+    let user: UserItem
 }

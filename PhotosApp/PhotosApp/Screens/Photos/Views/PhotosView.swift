@@ -79,7 +79,7 @@ final class PhotosView: UIView {
 
 extension PhotosView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photosViewModel?.photos?.count ?? 0
+        return photosViewModel?.photos.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -111,8 +111,8 @@ extension PhotosView {
 
 private extension PhotosView {
     func photo(forIndexPath indexPath: IndexPath) -> RowViewModel? {
-        guard (photosViewModel?.photos?.count ?? 0) > indexPath.row else { return nil }
-        return photosViewModel?.photos?[indexPath.row]
+        guard (photosViewModel?.photos.count ?? 0) > indexPath.row else { return nil }
+        return photosViewModel?.photos[indexPath.row]
     }
     
     func calculateWidth() -> CGFloat {

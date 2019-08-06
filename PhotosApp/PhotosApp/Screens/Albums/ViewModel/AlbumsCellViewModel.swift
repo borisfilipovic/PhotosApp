@@ -11,5 +11,6 @@ import Foundation
 struct AlbumsCellViewModel: RowViewModel {
     let album: AlbumItem?
     let photos: PhotosViewModel?
+    let user: UserItem
     let thumbnailUrl: String?
 }

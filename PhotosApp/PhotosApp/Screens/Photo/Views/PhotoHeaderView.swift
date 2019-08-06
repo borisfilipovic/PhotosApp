@@ -39,7 +39,7 @@ final class PhotoHeaderView: UIView {
     
     private func setup() {
         /// Colors.
-        backgroundColor = UIColor.black.withAlphaComponent(0.2)
+        backgroundColor = UIColor.black.withAlphaComponent(0.4)
         
         /// Add subviews.
         addSubview(closeButton)

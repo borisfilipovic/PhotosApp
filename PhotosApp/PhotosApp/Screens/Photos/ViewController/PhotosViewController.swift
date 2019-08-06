@@ -67,8 +67,8 @@ final class PhotosViewController: UIViewController {
 
 extension PhotosViewController: TouchSelectionDelegate {
     func userSelected(indexPath: IndexPath) {
-        guard let viewModel = photosController.viewModel.value as? PhotosGalleryViewModel, (viewModel.photos?.count ?? 0) > indexPath.row, let photo = viewModel.photos?[indexPath.row], let album = viewModel.album else {return}
-        let photoViewModel = PhotoViewModel(photo: photo, album: album)
+        guard let viewModel = photosController.viewModel.value as? PhotosGalleryViewModel, viewModel.photos.count > indexPath.row else {return}
+        let photoViewModel = PhotoViewModel(photo: viewModel.photos[indexPath.row], album: viewModel.album, user: viewModel.user)
         let photoViewController = PhotoViewController(viewModel: photoViewModel)
         navigationController?.present(photoViewController, animated: true, completion: nil)
     }

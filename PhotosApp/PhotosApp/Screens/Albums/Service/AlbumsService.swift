@@ -55,7 +55,7 @@ extension AlbumsService {
                         for album in filterUserAlbums {
                             let albumPhotos = allUsersPhotos.filter {$0.albumId == album.id}
                             let thumbnailUrl = albumPhotos.randomElement()?.thumbnailUrl
-                            let vm = AlbumsCellViewModel(album: album, photos: PhotosViewModel(photos: albumPhotos), thumbnailUrl: thumbnailUrl)
+                            let vm = AlbumsCellViewModel(album: album, photos: PhotosViewModel(photos: albumPhotos), user: self.user, thumbnailUrl: thumbnailUrl)
                             albumCellViewModels.append(vm)
                         }
                         completion?(.success(albumCellViewModels))

@@ -87,8 +87,8 @@ final class AlbumsViewController: UIViewController {
 
 extension AlbumsViewController: TouchSelectionDelegate {
     func userSelected(indexPath: IndexPath) {
-        guard let count = albumsController.viewModel.albumsCellViewModels.value??.count, count > indexPath.row, let photosViewModel = albumsController.viewModel.albumsCellViewModels.value??[indexPath.row].photos, let album = albumsController.viewModel.albumsCellViewModels.value??[indexPath.row].album else { return }
-        let photosGalleryViewModel = PhotosGalleryViewModel(photos: photosViewModel.photos, album: album)
+        guard let count = albumsController.viewModel.albumsCellViewModels.value??.count, count > indexPath.row, let photosViewModel = albumsController.viewModel.albumsCellViewModels.value??[indexPath.row].photos, let album = albumsController.viewModel.albumsCellViewModels.value??[indexPath.row].album, let user = albumsController.viewModel.albumsCellViewModels.value??[indexPath.row].user else { return }
+        let photosGalleryViewModel = PhotosGalleryViewModel(photos: photosViewModel.photos ?? [], album: album, user: user)
         let photosViewController = PhotosViewController(viewModel: photosGalleryViewModel)
         navigationController?.pushViewController(photosViewController, animated: true)
     }
