@@ -15,6 +15,7 @@ final class PhotoViewController: UIViewController {
     private lazy var photoView: PhotoView = {
         let photoV = PhotoView()
         photoV.photoHeaderView.closeButton.addTarget(self, action: #selector(PhotoViewController.close(sender:)), for: .touchUpInside)
+        photoV.swipeGestureRecognizer?.addTarget(self, action: #selector(PhotoViewController.close(sender:)))
         return photoV
     }()
     

@@ -39,6 +39,7 @@ final class PhotoView: UIView {
     
     private var toolbarHidden: Bool = false
     private var tapGestureRecognizer: UITapGestureRecognizer?
+    private(set) var swipeGestureRecognizer: UISwipeGestureRecognizer?
     
     // MARK: - Init.
     
@@ -47,6 +48,7 @@ final class PhotoView: UIView {
         setup()
         setupConstraints()
         setGestureRecogniser()
+        setSwipeGestureRecogniser()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -89,13 +91,21 @@ final class PhotoView: UIView {
         photoFooterView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
     
-    // MARK: - Setup gesture recogniser.
+    // MARK: - Setup gesture recognisers.
     
     private func setGestureRecogniser() {
         tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PhotoView.toggleVisible))
         tapGestureRecognizer?.numberOfTapsRequired = 1
         if let tapGestureRecognizer = tapGestureRecognizer {
             addGestureRecognizer(tapGestureRecognizer)
+        }
+    }
+    
+    private func setSwipeGestureRecogniser() {
+        swipeGestureRecognizer = UISwipeGestureRecognizer()
+        swipeGestureRecognizer?.direction = .down
+        if let swipeGestureRecognizer = swipeGestureRecognizer {
+            addGestureRecognizer(swipeGestureRecognizer)
         }
     }
 }
