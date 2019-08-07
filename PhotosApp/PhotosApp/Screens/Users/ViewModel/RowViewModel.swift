@@ -9,8 +9,3 @@
 import Foundation
 
 protocol RowViewModel {}
-
-/// Conform this protocol to handles user press action.
-protocol ViewModelPressible {
-    var cellPressed: (()->Void)? { get set }
-}
