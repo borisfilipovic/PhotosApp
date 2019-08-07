@@ -2,7 +2,7 @@
 //  UserCellViewModelTests.swift
 //  PhotosAppTests
 //
-//  Created by Boris Filipovic ENGL on 07/08/2019.
+//  Created by Boris Filipovic on 07/08/2019.
 //  Copyright © 2019 Boris Filipovic. All rights reserved.
 //
 
@@ -12,6 +12,7 @@ import XCTest
 class UserCellViewModelTests: XCTestCase {
     
     // MARK: - Test properties.
+    
     private let user = UserItem(id: 1, name: "User1", email: "emailUser1@gmail", phone: "1111")
     
     func testInitWithouthUser() {
