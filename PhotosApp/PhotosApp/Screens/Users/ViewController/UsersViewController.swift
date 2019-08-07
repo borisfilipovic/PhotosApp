@@ -15,6 +15,7 @@ final class UsersViewController: UIViewController {
     private lazy var usersView: SelectionView = {
         let usersV = SelectionView()
         usersV.delegate = self
+        usersV.pullToRefreshdelegate = self
         return usersV
     }()
     
@@ -87,5 +88,11 @@ extension UsersViewController: TouchSelectionDelegate {
         guard let count = userController.viewModel.usersCellViewModels.value??.count, count > indexPath.row, let user = userController.viewModel.usersCellViewModels.value??[indexPath.row].user else { return }
         let albumsViewController = AlbumsViewController(user: user)
         navigationController?.pushViewController(albumsViewController, animated: true)
+    }
+}
+
+extension UsersViewController: PullToRefreshDelegate {
+    func active() {
+        userController.start()
     }
 }

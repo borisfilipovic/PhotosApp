@@ -21,6 +21,7 @@ final class AlbumsTableViewCell: UITableViewCell, CellConfigurable {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
         setup()
         setupConstraints()
     }

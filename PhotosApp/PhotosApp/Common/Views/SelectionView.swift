@@ -32,16 +32,19 @@ final class SelectionView: BaseView {
         tblView.rowHeight = 80
         tblView.clipsToBounds = false
         tblView.translatesAutoresizingMaskIntoConstraints = false
+        tblView.bounces = true
         return tblView
     }()
-
+    
     private var items: [RowViewModel] = [] {
         didSet {
             mainTableView.reloadData()
         }
     }
     
+    private let refreshControl = UIRefreshControl()
     weak var delegate: TouchSelectionDelegate?
+    weak var pullToRefreshdelegate: PullToRefreshDelegate?
     
     // MARK: - Init.
     
@@ -65,9 +68,17 @@ final class SelectionView: BaseView {
         mainTableView.dataSource = self
         mainTableView.delegate = self
         
+        mainTableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action:  #selector(SelectionView.refreshData), for: .valueChanged)
+        
         /// Add subviews and layers.
         addSubview(mainTableView)
         addSubview(activityIndicator)
+    }
+    
+    @objc func refreshData() {
+        print("biiingo")
+        pullToRefreshdelegate?.active()
     }
     
     // MARK: - Setup constrains.
@@ -92,6 +103,7 @@ extension SelectionView {
         case .success, .requestEnded, .idle:
             removeText()
         case .requestStarted:
+            refreshControl.endRefreshing()
             set(text: "Loading...")
         case .error(let message):
             set(text: message)

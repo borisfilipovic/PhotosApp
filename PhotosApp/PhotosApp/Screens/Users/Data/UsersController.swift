@@ -8,14 +8,6 @@
 
 import Foundation
 
-enum ResponseType {
-    case idle
-    case requestStarted
-    case requestEnded
-    case success
-    case error(message: String)
-}
-
 final class UsersController {
     
     // MARK: - Properties.
@@ -53,7 +45,7 @@ extension UsersController {
                 self?.response.value = .success
                 self?.viewModel.usersCellViewModels.value = usersCellViewModels
             case .failure(let error):
-                self?.response.value = .error(message: "Error fetching data.")
+                self?.response.value = .error(message: "Error fetching data. Try pull to refresh data.")
                 self?.viewModel.usersCellViewModels.value = nil
                 print("Data error: \(error)")
             }

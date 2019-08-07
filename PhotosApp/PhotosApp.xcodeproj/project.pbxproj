@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		203EBA9722FB63F700CEF3D1 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203EBA9622FB63F700CEF3D1 /* BaseView.swift */; };
+		203EBA9922FB6B2E00CEF3D1 /* PullToRefreshDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203EBA9822FB6B2E00CEF3D1 /* PullToRefreshDelegate.swift */; };
+		203EBA9B22FB6D4100CEF3D1 /* ResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203EBA9A22FB6D4100CEF3D1 /* ResponseType.swift */; };
 		20476C3622F6B93200FAEBD0 /* AlbumItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20476C3522F6B93200FAEBD0 /* AlbumItem.swift */; };
 		20476C3922F6B9ED00FAEBD0 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20476C3822F6B9ED00FAEBD0 /* AlbumsViewController.swift */; };
 		20476C3C22F6BA0E00FAEBD0 /* AlbumsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20476C3B22F6BA0E00FAEBD0 /* AlbumsController.swift */; };
@@ -87,6 +89,8 @@
 		05C70BD6C1D2CE849A8AB1F9 /* Pods-PhotosAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosAppTests.release.xcconfig"; path = "Target Support Files/Pods-PhotosAppTests/Pods-PhotosAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		13ED203A809A3D1D8196645D /* Pods_PhotosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		203EBA9622FB63F700CEF3D1 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		203EBA9822FB6B2E00CEF3D1 /* PullToRefreshDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefreshDelegate.swift; sourceTree = "<group>"; };
+		203EBA9A22FB6D4100CEF3D1 /* ResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseType.swift; sourceTree = "<group>"; };
 		20476C3522F6B93200FAEBD0 /* AlbumItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumItem.swift; sourceTree = "<group>"; };
 		20476C3822F6B9ED00FAEBD0 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
 		20476C3B22F6BA0E00FAEBD0 /* AlbumsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsController.swift; sourceTree = "<group>"; };
@@ -466,6 +470,7 @@
 				2091E17D22F5F4BB007A22DA /* ModelItemProtocol.swift */,
 				2091E17F22F5F529007A22DA /* TouchSelectionDelegate.swift */,
 				20476C4922F7437800FAEBD0 /* CellConfigurable.swift */,
+				203EBA9822FB6B2E00CEF3D1 /* PullToRefreshDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -496,6 +501,7 @@
 				2091E15D22F4B295007A22DA /* Result.swift */,
 				2091E15F22F4B2CC007A22DA /* NetworkError.swift */,
 				2091E17022F558F6007A22DA /* NetworkSuccess.swift */,
+				203EBA9A22FB6D4100CEF3D1 /* ResponseType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -770,6 +776,7 @@
 			files = (
 				2091E17A22F5CA8A007A22DA /* UserCellViewModel.swift in Sources */,
 				2050E04322F36A830024C049 /* ViewController.swift in Sources */,
+				203EBA9B22FB6D4100CEF3D1 /* ResponseType.swift in Sources */,
 				20476C4622F6F12300FAEBD0 /* PhotoItem.swift in Sources */,
 				2091E17E22F5F4BB007A22DA /* ModelItemProtocol.swift in Sources */,
 				20476C5022F744FA00FAEBD0 /* AlbumCellView.swift in Sources */,
@@ -789,6 +796,7 @@
 				2091E17822F5BEF1007A22DA /* CodableDelegate.swift in Sources */,
 				2091E16422F4B3D9007A22DA /* Host.swift in Sources */,
 				2091E16B22F555B8007A22DA /* UsersViewModel.swift in Sources */,
+				203EBA9922FB6B2E00CEF3D1 /* PullToRefreshDelegate.swift in Sources */,
 				2091E16222F4B33C007A22DA /* EndpointProtocol.swift in Sources */,
 				20F24ECB22F89F2D005104DB /* UICollectionView+Extra.swift in Sources */,
 				20668A9A22F9CA500067D9F7 /* PhotoViewModel.swift in Sources */,

@@ -15,6 +15,7 @@ final class AlbumsViewController: UIViewController {
     private lazy var albumsView: SelectionView = {
         let usersV = SelectionView()
         usersV.delegate = self
+        usersV.pullToRefreshdelegate = self
         return usersV
     }()
     
@@ -59,6 +60,14 @@ final class AlbumsViewController: UIViewController {
     // MARK: - Binding.
     
     private func bindData() {
+        /// Network status.
+        albumsController.response.valueChanged = { [weak self] status in
+            guard let status = status else {return}
+            DispatchQueue.main.async {
+                self?.albumsView.dataFetch(status: status)
+            }
+        }
+        
         /// Data is loading state tracking.
         albumsController.viewModel.isLoading.valueChanged = { [weak self] isLoading in
             guard let isLoading = isLoading else {return}
@@ -91,5 +100,11 @@ extension AlbumsViewController: TouchSelectionDelegate {
         let photosGalleryViewModel = PhotosGalleryViewModel(photos: photosViewModel.photos ?? [], album: album, user: user)
         let photosViewController = PhotosViewController(viewModel: photosGalleryViewModel)
         navigationController?.pushViewController(photosViewController, animated: true)
+    }
+}
+
+extension AlbumsViewController: PullToRefreshDelegate {
+    func active() {
+        albumsController.start()
     }
 }
