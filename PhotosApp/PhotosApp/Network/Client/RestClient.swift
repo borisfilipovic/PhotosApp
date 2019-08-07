@@ -33,7 +33,6 @@ extension RestClient: RestClientProtocol {
         }
         var request = URLRequest(url: url)
         request.httpMethod = endpoint.httpMethod
-//        request.timeoutInterval = 10
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let data = data, error == nil, let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode == 200 {
                 result?(.success(data))

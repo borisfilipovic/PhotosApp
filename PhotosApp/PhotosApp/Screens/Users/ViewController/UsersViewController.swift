@@ -48,6 +48,14 @@ final class UsersViewController: UIViewController {
     // MARK: - Binding.
     
     private func bindData() {
+        /// Network status.
+        userController.response.valueChanged = { [weak self] status in
+            guard let status = status else {return}
+            DispatchQueue.main.async {
+                self?.usersView.dataFetch(status: status)
+            }
+        }
+        
         /// Data is loading state tracking.
         userController.viewModel.isLoading.valueChanged = { [weak self] isLoading in
             guard let isLoading = isLoading else {return}

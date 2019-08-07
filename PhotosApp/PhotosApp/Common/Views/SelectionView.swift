@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class SelectionView: UIView {
+final class SelectionView: BaseView {
     
     // MARK: - Properties.
     
@@ -45,8 +45,8 @@ final class SelectionView: UIView {
     
     // MARK: - Init.
     
-    init() {
-        super.init(frame: CGRect.zero)
+    override init() {
+        super.init()
         setup()
         setupConstraints()
     }
@@ -87,6 +87,17 @@ final class SelectionView: UIView {
 
 // MARK: - Public methods.
 extension SelectionView {
+    func dataFetch(status: ResponseType) {
+        switch status {
+        case .success, .requestEnded, .idle:
+            removeText()
+        case .requestStarted:
+            set(text: "Loading...")
+        case .error(let message):
+            set(text: message)
+        }
+    }
+    
     func data(isLoading: Bool) {
         isLoading ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
     }

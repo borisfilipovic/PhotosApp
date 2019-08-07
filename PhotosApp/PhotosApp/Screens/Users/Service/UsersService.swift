@@ -38,7 +38,6 @@ extension UsersService {
                 }
                 let usersCellViewModels = userItem.compactMap {UserCellViewModel(user: $0)}
                 completion?(.success(usersCellViewModels))
-                //completion?(.success(userItem))
             case .failure(let err):
                 completion?(.failure(NetworkError.generic(err)))
             }

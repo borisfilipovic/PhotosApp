@@ -8,11 +8,20 @@
 
 import Foundation
 
+enum ResponseType {
+    case idle
+    case requestStarted
+    case requestEnded
+    case success
+    case error(message: String)
+}
+
 final class UsersController {
     
     // MARK: - Properties.
     
     let viewModel: UsersViewModel
+    let response = Observable<ResponseType>(.idle)
     private let userService: UsersService
     
     // MARK: - Init.
@@ -29,19 +38,22 @@ extension UsersController {
         /// Set initial states.
         viewModel.isLoading.value = true
         viewModel.isTableViewHidden.value = true
+        response.value = .requestStarted
         
         /// Fetch data.
         userService.fetchUsers { [weak self] result in
             /// Handle states.
             self?.viewModel.isLoading.value = false
             self?.viewModel.isTableViewHidden.value = false
+            self?.response.value = .requestEnded
             
             /// Handle results.
             switch result {
             case .success(let usersCellViewModels):
-                //self?.viewModel.users.value = users
+                self?.response.value = .success
                 self?.viewModel.usersCellViewModels.value = usersCellViewModels
             case .failure(let error):
+                self?.response.value = .error(message: "Error fetching data.")
                 self?.viewModel.usersCellViewModels.value = nil
                 print("Data error: \(error)")
             }

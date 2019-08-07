@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		203EBA9722FB63F700CEF3D1 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203EBA9622FB63F700CEF3D1 /* BaseView.swift */; };
 		20476C3622F6B93200FAEBD0 /* AlbumItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20476C3522F6B93200FAEBD0 /* AlbumItem.swift */; };
 		20476C3922F6B9ED00FAEBD0 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20476C3822F6B9ED00FAEBD0 /* AlbumsViewController.swift */; };
 		20476C3C22F6BA0E00FAEBD0 /* AlbumsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20476C3B22F6BA0E00FAEBD0 /* AlbumsController.swift */; };
@@ -85,6 +86,7 @@
 /* Begin PBXFileReference section */
 		05C70BD6C1D2CE849A8AB1F9 /* Pods-PhotosAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosAppTests.release.xcconfig"; path = "Target Support Files/Pods-PhotosAppTests/Pods-PhotosAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		13ED203A809A3D1D8196645D /* Pods_PhotosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		203EBA9622FB63F700CEF3D1 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		20476C3522F6B93200FAEBD0 /* AlbumItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumItem.swift; sourceTree = "<group>"; };
 		20476C3822F6B9ED00FAEBD0 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
 		20476C3B22F6BA0E00FAEBD0 /* AlbumsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsController.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				2091E14522F47C7B007A22DA /* SelectionView.swift */,
+				203EBA9622FB63F700CEF3D1 /* BaseView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -792,6 +795,7 @@
 				2091E17622F55DFC007A22DA /* Observable.swift in Sources */,
 				2091E16922F5558E007A22DA /* UsersController.swift in Sources */,
 				2091E15E22F4B295007A22DA /* Result.swift in Sources */,
+				203EBA9722FB63F700CEF3D1 /* BaseView.swift in Sources */,
 				20F24ED622F8C861005104DB /* PhotoController.swift in Sources */,
 				20476C3C22F6BA0E00FAEBD0 /* AlbumsController.swift in Sources */,
 				2091E15022F48232007A22DA /* UIView+Extra.swift in Sources */,
