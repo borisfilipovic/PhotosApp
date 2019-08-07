@@ -12,10 +12,12 @@ struct UserItem: ViewModelItemProtocol, CodableDelegate {
     let id: Int
     let name: String
     let email: String
-    let address: AdressItem
     let phone: String
+    /* Since we dont need this data there is no reason to use them.
     let website: String
     let company: CompanyItem
+    let address: AdressItem
+   */
 }
 
 struct AdressItem: Codable {
