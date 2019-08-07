@@ -24,13 +24,16 @@ extension RestClient: RestClientProtocol {
                 queryItems.append(URLQueryItem(name: name, value: value))
             }
         }
-        urlComponents?.queryItems = queryItems
+//        if !queryItems.isEmpty {
+//            urlComponents?.queryItems = queryItems
+//        }
         guard let url = urlComponents?.url else {
             result?(.failure(NetworkError.incorrectEndpointData))
             return
         }
         var request = URLRequest(url: url)
         request.httpMethod = endpoint.httpMethod
+//        request.timeoutInterval = 10
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let data = data, error == nil, let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode == 200 {
                 result?(.success(data))

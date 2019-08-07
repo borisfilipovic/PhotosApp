@@ -45,13 +45,14 @@ extension AlbumsService {
                             completion?(.failure(NetworkError.jsonEncode))
                             return
                         }
-                        var albumIds = Array(Set(userItem.compactMap {$0.id})) /// Get album id's. Remove duplicates by using Set.
+                        let filterUserAlbums = userItem.filter {$0.userId == self.user.id}
+                        var albumIds = Array(Set(filterUserAlbums.compactMap {$0.id})) /// Get album id's. Remove duplicates by using Set.
                         albumIds.sort {$0 < $1}
                         let allUsersPhotos = photoItems.filter { (item) -> Bool in
                             return albumIds.contains(item.albumId)
                         }
                         var albumCellViewModels: [AlbumsCellViewModel] = []
-                        for album in userItem {
+                        for album in filterUserAlbums {
                             let albumPhotos = allUsersPhotos.filter {$0.albumId == album.id}
                             let thumbnailUrl = albumPhotos.randomElement()?.thumbnailUrl
                             let vm = AlbumsCellViewModel(album: album, photos: PhotosViewModel(photos: albumPhotos), user: self.user, thumbnailUrl: thumbnailUrl)
