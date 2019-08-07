@@ -32,6 +32,10 @@ final class PhotoViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        print("Photo view controller deinit called.")
+    }
+    
     override func loadView() {
         view = photoView
     }
@@ -41,11 +45,7 @@ final class PhotoViewController: UIViewController {
         bindData()
         setup()
     }
-    
-    deinit {
-        print("PhotosViewController deinit called.")
-    }
-    
+
     // MARK: - Setup.
     
     private func setup() {

@@ -60,10 +60,7 @@ final class PhotoView: UIView {
     private func setup() {
         /// Colors.
         backgroundColor = .black
-        
-        /// Set initial UI elements visibility.
-        setUIElementsVisibility()
-        
+
         /// Add subviews.
         scrollView.addSubview(photoImageView)
         addSubview(scrollView)
@@ -112,7 +109,6 @@ final class PhotoView: UIView {
 
 extension PhotoView {
     @objc func toggleVisible() {
-        toolbarHidden.toggle()
         setUIElementsVisibility()
     }
 }
@@ -128,7 +124,11 @@ extension PhotoView {
 
 private extension PhotoView {
     func setUIElementsVisibility() {
-        photoHeaderView.isHidden = toolbarHidden
-        photoFooterView.isHidden = toolbarHidden
+        toolbarHidden.toggle()
+        let alpha: CGFloat = toolbarHidden ? 0.0 : 1.0
+        UIView.animate(withDuration: 0.3, animations: { [weak self] in
+            self?.photoHeaderView.alpha = alpha
+            self?.photoFooterView.alpha = alpha
+        }, completion: nil)
     }
 }
