@@ -11,12 +11,7 @@ import UIKit
 final class PhotoView: UIView {
     
     // MARK: - Properties.
-    
-    private let scrollView: UIScrollView = {
-        let scrollV = UIScrollView()
-        return scrollV
-    }()
-    
+
     private lazy var photoImageView: UIImageView = {
         let imgView: UIImageView = UIImageView()
         imgView.translatesAutoresizingMaskIntoConstraints = false
@@ -62,8 +57,7 @@ final class PhotoView: UIView {
         backgroundColor = .black
 
         /// Add subviews.
-        scrollView.addSubview(photoImageView)
-        addSubview(scrollView)
+        addSubview(photoImageView)
         addSubview(photoHeaderView)
         addSubview(photoFooterView)
     }
@@ -71,9 +65,8 @@ final class PhotoView: UIView {
     // MARK: - Setup constrains.
     
     private func setupConstraints() {
-        /// Scroll view.
-        scrollView.pinSafe(to: self)
-        photoImageView.pinSafe(to: scrollView)
+        /// Image view.
+        photoImageView.pinSafe(to: self)
         
         /// Photo header view.
         photoHeaderView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
