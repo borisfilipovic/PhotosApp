@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     /// Set initial view controller.
     let navigationUserViewController = UINavigationController(rootViewController: UsersViewController())
+    navigationUserViewController.navigationBar.tintColor = .black
+    navigationUserViewController.navigationBar.barTintColor = .white
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.rootViewController = navigationUserViewController
     window?.makeKeyAndVisible()
