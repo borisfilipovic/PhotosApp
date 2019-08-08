@@ -8,7 +8,6 @@
 
 import Foundation
 
-/// This service is communication interface between app and backend.
 final class UsersService {
     
     // MARK: - Properties.

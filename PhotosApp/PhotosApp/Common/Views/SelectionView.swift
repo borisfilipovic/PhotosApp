@@ -77,7 +77,6 @@ final class SelectionView: BaseView {
     }
     
     @objc func refreshData() {
-        print("biiingo")
         pullToRefreshdelegate?.active()
     }
     
