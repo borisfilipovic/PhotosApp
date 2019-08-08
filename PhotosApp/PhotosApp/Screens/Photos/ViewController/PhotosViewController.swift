@@ -41,6 +41,12 @@ final class PhotosViewController: UIViewController {
         setup()
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        // Catch device rotation so UICollectionView can resize cells.
+        photosView.viewWillTransition()
+    }
+    
     deinit {
         print("PhotosViewController deinit called.")
     }

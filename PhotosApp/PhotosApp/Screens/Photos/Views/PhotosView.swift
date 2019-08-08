@@ -107,6 +107,13 @@ extension PhotosView {
         guard let photosViewModel = photosVM as? PhotosGalleryViewModel else { return }
         self.photosViewModel = photosViewModel
     }
+    
+    func viewWillTransition() {
+        guard let flowLayout = mainCollectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
+            return
+        }
+        flowLayout.invalidateLayout()
+    }
 }
 
 private extension PhotosView {
