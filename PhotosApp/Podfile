@@ -6,6 +6,7 @@ target 'PhotosApp' do
   # Pods for PhotosApp
   # UI pods
   pod 'Kingfisher'
+  pod 'Alamofire'
 
   target 'PhotosAppTests' do
     inherit! :search_paths
